@@ -64,10 +64,11 @@ body {
 
 main.learn-to-code-offer-7day {
   display: flex;
-  margin: 0 auto;
+  margin: 0 auto 40px auto;
+  /* padding-bottom: 20px; */
   max-width: 1109px;
   height: auto;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 section.learn-to-code-intro {
@@ -115,6 +116,7 @@ p.learn-to-code-banner {
   line-height: 26px;
   letter-spacing: 0.0125em;
   margin-bottom: 24px;
+  box-shadow: 0 8px 0px #da6667;
 }
 
 p.learn-to-code-banner span {
@@ -129,6 +131,9 @@ p.learn-to-code-banner span {
   width: 540px;
   background: #fff;
   border-radius: 10px;
+  /* box-shadow: 0 8px 0px rgba(0, 0, 0, 0.16); */
+  box-shadow: 0 8px 0px #da6667;
+
   padding: 40px 40px 48px 40px;
 }
 
