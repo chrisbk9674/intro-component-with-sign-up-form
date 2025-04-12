@@ -202,6 +202,15 @@ button {
   background: #38cc8c;
   color: #fff;
   margin-bottom: 9px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #30b179;
+}
+
+button:active {
+  background: #207751;
 }
 
 p.disclaimer {
