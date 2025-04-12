@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <title>Intro Component With Signup Form</title>
+  </head>
+  <body>
+    <main class="learn-to-code-offer-7day">
+      <section class="learn-to-code-intro">
+        <header>
+          <h1 class="learn-to-code-title">Learn to code by watching others</h1>
+          <p class="learn-to-code-description">
+            See how experienced developers solve problems in real-time. Watching
+            scripted tutorials is great, but understanding how developers think
+            is invaluable.
+          </p>
+        </header>
+      </section>
+      <section class="learn-to-code-offer">
+        <p class="learn-to-code-banner">
+          Try it free 7 days<span>&nbsp;then $20/mo. thereafter</span>
+        </p>
+        <article class="learn-to-code-form-card">
+          <form class="learn-to-code-form" action="#" method="post" novalidate>
+            <div class="input-wrap">
+              <div class="learn-to-code-input-group">
+                <label for="first-name" class="visually-hidden"
+                  >First Name</label
+                >
+                <input
+                  type="text"
+                  id="first-name"
+                  aria-describedby="first-name-error"
+                  name="first-name"
+                  class="learn-to-code-input"
+                  placeholder="First Name"
+                  required
+                />
+                <img
+                  src="images/icon-error.svg"
+                  alt="Error icon"
+                  class="error-icon"
+                  id="first-name-error-icon"
+                  style="display: none"
+                />
+              </div>
+              <p
+                class="learn-to-code-error"
+                id="first-name-error"
+                role="alert"
+                style="display: none"
+              >
+                First Name cannot be empty
+              </p>
+            </div>
+            <div class="input-wrap">
+              <div class="learn-to-code-input-group">
+                <label for="last-name" class="visually-hidden">Last Name</label>
+                <input
+                  type="text"
+                  id="last-name"
+                  aria-describedby="last-name-error"
+                  name="last-name"
+                  class="learn-to-code-input"
+                  placeholder="Last Name"
+                  required
+                />
+                <img
+                  src="images/icon-error.svg"
+                  alt="Error icon"
+                  class="error-icon"
+                  id="last-name-error-icon"
+                  style="display: none"
+                />
+              </div>
+              <p
+                class="learn-to-code-error"
+                id="last-name-error"
+                role="alert"
+                style="display: none"
+              >
+                Last Name cannot be empty
+              </p>
+            </div>
+
+            <div class="input-wrap">
+              <div class="learn-to-code-input-group">
+                <label for="email-address" class="visually-hidden"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  id="email-address"
+                  aria-describedby="email-address-error"
+                  name="email-address"
+                  class="learn-to-code-input"
+                  placeholder="Email Address"
+                  required
+                />
+                <img
+                  src="images/icon-error.svg"
+                  alt="Error icon"
+                  class="error-icon"
+                  id="email-address-error-icon"
+                  style="display: none"
+                />
+              </div>
+              <p
+                class="learn-to-code-error"
+                id="email-address-error"
+                role="alert"
+                style="display: none"
+              >
+                Looks like this is not an email
+              </p>
+            </div>
+
+            <div class="input-wrap">
+              <div class="learn-to-code-input-group">
+                <label for="password" class="visually-hidden">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  aria-describedby="password-error"
+                  name="password"
+                  class="learn-to-code-input"
+                  placeholder="Password"
+                  required
+                />
+                <img
+                  src="images/icon-error.svg"
+                  alt="Error icon"
+                  class="error-icon"
+                  id="password-error-icon"
+                  style="display: none"
+                />
+              </div>
+              <p
+                class="learn-to-code-error"
+                id="password-error"
+                role="alert"
+                style="display: none"
+              >
+                Password cannot be empty
+              </p>
+            </div>
+            <button
+              type="submit"
+              class="learn-to-code-button"
+              aria-label="Submit form"
+            >
+              claim your free trial
+            </button>
+            <p class="disclaimer">
+              By clicking the button, you are agreeing to our
+              <span><a href=""> Terms and Services</a></span>
+            </p>
+          </form>
+        </article>
+      </section>
+    </main>
+    <script>
+      const form = document.querySelector(".learn-to-code-form");
+
+      const fields = [
+        {
+          id: "first-name",
+          errorId: "first-name-error",
+          iconId: "first-name-error-icon",
+          validate: (value) => {
+            const trimmed = value.trim();
+            if (trimmed === "") return "First Name cannot be empty";
+            if (trimmed.length < 2)
+              return "First Name must be at least 2 characters";
+            return "";
+          },
+        },
+        {
+          id: "last-name",
+          errorId: "last-name-error",
+          iconId: "last-name-error-icon",
+          validate: (value) => {
+            const trimmed = value.trim();
+            if (trimmed === "") return "Last Name cannot be empty";
+            if (trimmed.length < 2)
+              return "Last Name must be at least 2 characters";
+            return "";
+          },
+        },
+        {
+          id: "email-address",
+          errorId: "email-address-error",
+          iconId: "email-address-error-icon",
+          validate: (value) => {
+            const trimmed = value.trim();
+            if (trimmed === "") return "Email Address cannot be empty";
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed))
+              return "Looks like this is not an email";
+            return "";
+          },
+        },
+        {
+          id: "password",
+          errorId: "password-error",
+          iconId: "password-error-icon",
+          validate: (value) => {
+            const trimmed = value.trim();
+            if (trimmed === "") return "Password cannot be empty";
+            if (trimmed.length < 6)
+              return "Password must be at least 6 characters";
+            return "";
+          },
+        },
+      ];
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let formValid = true;
+
+        fields.forEach(({ id, errorId, iconId, validate }) => {
+          const input = document.getElementById(id);
+          const error = document.getElementById(errorId);
+          const icon = document.getElementById(iconId);
+
+          const message = validate(input.value);
+
+          if (message) {
+            input.classList.add("invalid");
+            error.textContent = message;
+            error.style.display = "block";
+            icon.style.display = "block";
+            formValid = false;
+          } else {
+            input.classList.remove("invalid");
+            error.style.display = "none";
+            icon.style.display = "none";
+          }
+        });
+
+        if (formValid) {
+          console.log("Form is valid! 🎉 Submitting...");
+        }
+      });
+
+      fields.forEach(({ id, errorId, iconId, validate }) => {
+        const input = document.getElementById(id);
+        const error = document.getElementById(errorId);
+        const icon = document.getElementById(iconId);
+
+        input.addEventListener("input", () => {
+          const message = validate(input.value);
+          if (!message) {
+            input.classList.remove("invalid");
+            error.style.display = "none";
+            icon.style.display = "none";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
